@@ -1,0 +1,2006 @@
+{
+  "contractName": "IpfsUpload",
+  "abi": [
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "_ipfsImages",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "_id",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "_path",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "_manager",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_ipfsHashWithBaseUrl",
+          "type": "string"
+        }
+      ],
+      "name": "addFile",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_index",
+          "type": "uint256"
+        }
+      ],
+      "name": "deleteFile",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "getFiles",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "_id",
+              "type": "uint256"
+            },
+            {
+              "internalType": "string",
+              "name": "_path",
+              "type": "string"
+            }
+          ],
+          "internalType": "struct IpfsUpload.ImageStruct[]",
+          "name": "",
+          "type": "tuple[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"_ipfsImages\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_id\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"_path\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"_manager\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"string\",\"name\":\"_ipfsHashWithBaseUrl\",\"type\":\"string\"}],\"name\":\"addFile\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_index\",\"type\":\"uint256\"}],\"name\":\"deleteFile\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"getFiles\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"_id\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"_path\",\"type\":\"string\"}],\"internalType\":\"struct IpfsUpload.ImageStruct[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/IpfsUpload.sol\":\"IpfsUpload\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/IpfsUpload.sol\":{\"keccak256\":\"0x82052b9728196a7f8450937da1a2ce9b0a65674cbfc749ba6e88763685f593ec\",\"urls\":[\"bzz-raw://45db58abb2113a6c53060f98eb80b1fb2ed42ab7f6aff931122ff7b23ebaf8bb\",\"dweb:/ipfs/QmV8Wp8UTKvNUU4B3pauTjs7vArdDtH5wBXTke9X8yuKWD\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5033600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506109f1806100616000396000f3fe608060405234801561001057600080fd5b50600436106100575760003560e01c80632da96d731461005c578063c5b420061461007a578063ddca59c314610096578063eb9b9b64146100c7578063f0329f6b146100e3575b600080fd5b610064610101565b60405161007191906107f7565b60405180910390f35b610094600480360361008f919081019061064e565b61020c565b005b6100b060048036036100ab919081019061064e565b6102be565b6040516100be929190610819565b60405180910390f35b6100e160048036036100dc919081019061060d565b610387565b005b6100eb61040a565b6040516100f891906107dc565b60405180910390f35b60606000805480602002602001604051908101604052809291908181526020016000905b82821015610203578382906000526020600020906002020160405180604001604052908160008201548152602001600182018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156101eb5780601f106101c0576101008083540402835291602001916101eb565b820191906000526020600020905b8154815290600101906020018083116101ce57829003601f168201915b50505050508152505081526020019060010190610125565b50505050905090565b60006001600080549050038154811061022157fe5b90600052602060002090600202016000828154811061023c57fe5b9060005260206000209060020201600082015481600001556001820181600101908054600181600116156101000203166002900461027b929190610430565b50905050600080548061028a57fe5b60019003818190600052602060002090600202016000808201600090556001820160006102b791906104b7565b5050905550565b600081815481106102cb57fe5b9060005260206000209060020201600091509050806000015490806001018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561037d5780601f106103525761010080835404028352916020019161037d565b820191906000526020600020905b81548152906001019060200180831161036057829003601f168201915b5050505050905082565b60026000815480929190600101919050555060006040518060400160405280600254815260200183815250908060018154018082558091505090600182039060005260206000209060020201600090919290919091506000820151816000015560208201518160010190805190602001906104039291906104ff565b5050505050565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061046957805485556104a6565b828001600101855582156104a657600052602060002091601f016020900482015b828111156104a557825482559160010191906001019061048a565b5b5090506104b3919061057f565b5090565b50805460018160011615610100020316600290046000825580601f106104dd57506104fc565b601f0160209004906000526020600020908101906104fb919061057f565b5b50565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061054057805160ff191683800117855561056e565b8280016001018555821561056e579182015b8281111561056d578251825591602001919060010190610552565b5b50905061057b919061057f565b5090565b6105a191905b8082111561059d576000816000905550600101610585565b5090565b90565b600082601f8301126105b557600080fd5b81356105c86105c382610876565b610849565b915080825260208301602083018583830111156105e457600080fd5b6105ef838284610944565b50505092915050565b60008135905061060781610997565b92915050565b60006020828403121561061f57600080fd5b600082013567ffffffffffffffff81111561063957600080fd5b610645848285016105a4565b91505092915050565b60006020828403121561066057600080fd5b600061066e848285016105f8565b91505092915050565b60006106838383610781565b905092915050565b61069481610908565b82525050565b60006106a5826108b2565b6106af81856108d5565b9350836020820285016106c1856108a2565b8060005b858110156106fd57848403895281516106de8582610677565b94506106e9836108c8565b925060208a019950506001810190506106c5565b50829750879550505050505092915050565b600061071a826108bd565b61072481856108e6565b9350610734818560208601610953565b61073d81610986565b840191505092915050565b6000610753826108bd565b61075d81856108f7565b935061076d818560208601610953565b61077681610986565b840191505092915050565b600060408301600083015161079960008601826107be565b50602083015184820360208601526107b1828261070f565b9150508091505092915050565b6107c78161093a565b82525050565b6107d68161093a565b82525050565b60006020820190506107f1600083018461068b565b92915050565b60006020820190508181036000830152610811818461069a565b905092915050565b600060408201905061082e60008301856107cd565b81810360208301526108408184610748565b90509392505050565b6000604051905081810181811067ffffffffffffffff8211171561086c57600080fd5b8060405250919050565b600067ffffffffffffffff82111561088d57600080fd5b601f19601f8301169050602081019050919050565b6000819050602082019050919050565b600081519050919050565b600081519050919050565b6000602082019050919050565b600082825260208201905092915050565b600082825260208201905092915050565b600082825260208201905092915050565b60006109138261091a565b9050919050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000819050919050565b82818337600083830152505050565b60005b83811015610971578082015181840152602081019050610956565b83811115610980576000848401525b50505050565b6000601f19601f8301169050919050565b6109a08161093a565b81146109ab57600080fd5b5056fea365627a7a723158204741b26874c82d3056eb703c99a4f071f19dee834886e817f01a0008f24670926c6578706572696d656e74616cf564736f6c63430005100040",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100575760003560e01c80632da96d731461005c578063c5b420061461007a578063ddca59c314610096578063eb9b9b64146100c7578063f0329f6b146100e3575b600080fd5b610064610101565b60405161007191906107f7565b60405180910390f35b610094600480360361008f919081019061064e565b61020c565b005b6100b060048036036100ab919081019061064e565b6102be565b6040516100be929190610819565b60405180910390f35b6100e160048036036100dc919081019061060d565b610387565b005b6100eb61040a565b6040516100f891906107dc565b60405180910390f35b60606000805480602002602001604051908101604052809291908181526020016000905b82821015610203578382906000526020600020906002020160405180604001604052908160008201548152602001600182018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156101eb5780601f106101c0576101008083540402835291602001916101eb565b820191906000526020600020905b8154815290600101906020018083116101ce57829003601f168201915b50505050508152505081526020019060010190610125565b50505050905090565b60006001600080549050038154811061022157fe5b90600052602060002090600202016000828154811061023c57fe5b9060005260206000209060020201600082015481600001556001820181600101908054600181600116156101000203166002900461027b929190610430565b50905050600080548061028a57fe5b60019003818190600052602060002090600202016000808201600090556001820160006102b791906104b7565b5050905550565b600081815481106102cb57fe5b9060005260206000209060020201600091509050806000015490806001018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561037d5780601f106103525761010080835404028352916020019161037d565b820191906000526020600020905b81548152906001019060200180831161036057829003601f168201915b5050505050905082565b60026000815480929190600101919050555060006040518060400160405280600254815260200183815250908060018154018082558091505090600182039060005260206000209060020201600090919290919091506000820151816000015560208201518160010190805190602001906104039291906104ff565b5050505050565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061046957805485556104a6565b828001600101855582156104a657600052602060002091601f016020900482015b828111156104a557825482559160010191906001019061048a565b5b5090506104b3919061057f565b5090565b50805460018160011615610100020316600290046000825580601f106104dd57506104fc565b601f0160209004906000526020600020908101906104fb919061057f565b5b50565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061054057805160ff191683800117855561056e565b8280016001018555821561056e579182015b8281111561056d578251825591602001919060010190610552565b5b50905061057b919061057f565b5090565b6105a191905b8082111561059d576000816000905550600101610585565b5090565b90565b600082601f8301126105b557600080fd5b81356105c86105c382610876565b610849565b915080825260208301602083018583830111156105e457600080fd5b6105ef838284610944565b50505092915050565b60008135905061060781610997565b92915050565b60006020828403121561061f57600080fd5b600082013567ffffffffffffffff81111561063957600080fd5b610645848285016105a4565b91505092915050565b60006020828403121561066057600080fd5b600061066e848285016105f8565b91505092915050565b60006106838383610781565b905092915050565b61069481610908565b82525050565b60006106a5826108b2565b6106af81856108d5565b9350836020820285016106c1856108a2565b8060005b858110156106fd57848403895281516106de8582610677565b94506106e9836108c8565b925060208a019950506001810190506106c5565b50829750879550505050505092915050565b600061071a826108bd565b61072481856108e6565b9350610734818560208601610953565b61073d81610986565b840191505092915050565b6000610753826108bd565b61075d81856108f7565b935061076d818560208601610953565b61077681610986565b840191505092915050565b600060408301600083015161079960008601826107be565b50602083015184820360208601526107b1828261070f565b9150508091505092915050565b6107c78161093a565b82525050565b6107d68161093a565b82525050565b60006020820190506107f1600083018461068b565b92915050565b60006020820190508181036000830152610811818461069a565b905092915050565b600060408201905061082e60008301856107cd565b81810360208301526108408184610748565b90509392505050565b6000604051905081810181811067ffffffffffffffff8211171561086c57600080fd5b8060405250919050565b600067ffffffffffffffff82111561088d57600080fd5b601f19601f8301169050602081019050919050565b6000819050602082019050919050565b600081519050919050565b600081519050919050565b6000602082019050919050565b600082825260208201905092915050565b600082825260208201905092915050565b600082825260208201905092915050565b60006109138261091a565b9050919050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000819050919050565b82818337600083830152505050565b60005b83811015610971578082015181840152602081019050610956565b83811115610980576000848401525b50505050565b6000601f19601f8301169050919050565b6109a08161093a565b81146109ab57600080fd5b5056fea365627a7a723158204741b26874c82d3056eb703c99a4f071f19dee834886e817f01a0008f24670926c6578706572696d656e74616cf564736f6c63430005100040",
+  "sourceMap": "100:727:0:-;;;284:57;8:9:-1;5:2;;;30:1;27;20:12;5:2;284:57:0;324:10;313:8;;:21;;;;;;;;;;;;;;;;;;100:727;;;;;;",
+  "deployedSourceMap": "100:727:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;100:727:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;732:92;;;:::i;:::-;;;;;;;;;;;;;;;;588:138;;;;;;;;;;;;;;;;:::i;:::-;;199:32;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;347:235;;;;;;;;;;;;;;;;:::i;:::-;;237:23;;;:::i;:::-;;;;;;;;;;;;;;;;732:92;767:20;806:11;799:18;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;732:92;:::o;588:138::-;659:11;690:1;671:11;:18;;;;:20;659:33;;;;;;;;;;;;;;;;;;637:11;649:6;637:19;;;;;;;;;;;;;;;;;;:55;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;702:11;:17;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;588:138;:::o;199:32::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;347:235::-;418:6;;:8;;;;;;;;;;;;;436:11;466:99;;;;;;;;500:6;;466:99;;;;530:20;466:99;;;436:139;;39:1:-1;33:3;27:10;23:18;57:10;52:3;45:23;79:10;72:17;;0:93;436:139:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;347:235;:::o;237:23::-;;;;;;;;;;;;;:::o;100:727::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;6:442:-1:-;;108:3;101:4;93:6;89:17;85:27;75:2;;126:1;123;116:12;75:2;163:6;150:20;185:65;200:49;242:6;200:49;;;185:65;;;176:74;;270:6;263:5;256:21;306:4;298:6;294:17;339:4;332:5;328:16;374:3;365:6;360:3;356:16;353:25;350:2;;;391:1;388;381:12;350:2;401:41;435:6;430:3;425;401:41;;;68:380;;;;;;;;456:130;;536:6;523:20;514:29;;548:33;575:5;548:33;;;508:78;;;;;593:347;;707:2;695:9;686:7;682:23;678:32;675:2;;;723:1;720;713:12;675:2;786:1;775:9;771:17;758:31;809:18;801:6;798:30;795:2;;;841:1;838;831:12;795:2;861:63;916:7;907:6;896:9;892:22;861:63;;;851:73;;737:193;669:271;;;;;947:241;;1051:2;1039:9;1030:7;1026:23;1022:32;1019:2;;;1067:1;1064;1057:12;1019:2;1102:1;1119:53;1164:7;1155:6;1144:9;1140:22;1119:53;;;1109:63;;1081:97;1013:175;;;;;1196:245;;1341:94;1431:3;1423:6;1341:94;;;1327:108;;1320:121;;;;;1449:113;1532:24;1550:5;1532:24;;;1527:3;1520:37;1514:48;;;1644:1024;;1833:76;1903:5;1833:76;;;1922:108;2023:6;2018:3;1922:108;;;1915:115;;2053:3;2095:4;2087:6;2083:17;2078:3;2074:27;2122:78;2194:5;2122:78;;;2220:7;2248:1;2233:396;2258:6;2255:1;2252:13;2233:396;;;2320:9;2314:4;2310:20;2305:3;2298:33;2365:6;2359:13;2387:108;2490:4;2475:13;2387:108;;;2379:116;;2512:82;2587:6;2512:82;;;2502:92;;2617:4;2612:3;2608:14;2601:21;;2290:339;2280:1;2277;2273:9;2268:14;;2233:396;;;2237:14;2642:4;2635:11;;2659:3;2652:10;;1812:856;;;;;;;;;;2676:319;;2774:35;2803:5;2774:35;;;2821:61;2875:6;2870:3;2821:61;;;2814:68;;2887:52;2932:6;2927:3;2920:4;2913:5;2909:16;2887:52;;;2960:29;2982:6;2960:29;;;2955:3;2951:39;2944:46;;2754:241;;;;;;3002:339;;3110:35;3139:5;3110:35;;;3157:71;3221:6;3216:3;3157:71;;;3150:78;;3233:52;3278:6;3273:3;3266:4;3259:5;3255:16;3233:52;;;3306:29;3328:6;3306:29;;;3301:3;3297:39;3290:46;;3090:251;;;;;;3417:555;;3556:4;3551:3;3547:14;3638:4;3631:5;3627:16;3621:23;3650:63;3707:4;3702:3;3698:14;3684:12;3650:63;;;3576:143;3793:4;3786:5;3782:16;3776:23;3845:3;3839:4;3835:14;3828:4;3823:3;3819:14;3812:38;3865:69;3929:4;3915:12;3865:69;;;3857:77;;3729:217;3963:4;3956:11;;3529:443;;;;;;3979:103;4052:24;4070:5;4052:24;;;4047:3;4040:37;4034:48;;;4089:113;4172:24;4190:5;4172:24;;;4167:3;4160:37;4154:48;;;4209:213;;4327:2;4316:9;4312:18;4304:26;;4341:71;4409:1;4398:9;4394:17;4385:6;4341:71;;;4298:124;;;;;4429:449;;4641:2;4630:9;4626:18;4618:26;;4691:9;4685:4;4681:20;4677:1;4666:9;4662:17;4655:47;4716:152;4863:4;4854:6;4716:152;;;4708:160;;4612:266;;;;;4885:404;;5047:2;5036:9;5032:18;5024:26;;5061:71;5129:1;5118:9;5114:17;5105:6;5061:71;;;5180:9;5174:4;5170:20;5165:2;5154:9;5150:18;5143:48;5205:74;5274:4;5265:6;5205:74;;;5197:82;;5018:271;;;;;;5296:256;;5358:2;5352:9;5342:19;;5396:4;5388:6;5384:17;5495:6;5483:10;5480:22;5459:18;5447:10;5444:34;5441:62;5438:2;;;5516:1;5513;5506:12;5438:2;5536:10;5532:2;5525:22;5336:216;;;;;5559:322;;5703:18;5695:6;5692:30;5689:2;;;5735:1;5732;5725:12;5689:2;5802:4;5798:9;5791:4;5783:6;5779:17;5775:33;5767:41;;5866:4;5860;5856:15;5848:23;;5626:255;;;;5888:173;;5996:3;5988:11;;6034:4;6029:3;6025:14;6017:22;;5982:79;;;;6068:159;;6199:5;6193:12;6183:22;;6164:63;;;;6234:118;;6324:5;6318:12;6308:22;;6289:63;;;;6359:130;;6479:4;6474:3;6470:14;6462:22;;6456:33;;;;6497:200;;6649:6;6644:3;6637:19;6686:4;6681:3;6677:14;6662:29;;6630:67;;;;;6706:153;;6811:6;6806:3;6799:19;6848:4;6843:3;6839:14;6824:29;;6792:67;;;;;6868:163;;6983:6;6978:3;6971:19;7020:4;7015:3;7011:14;6996:29;;6964:67;;;;;7039:91;;7101:24;7119:5;7101:24;;;7090:35;;7084:46;;;;7137:121;;7210:42;7203:5;7199:54;7188:65;;7182:76;;;;7265:72;;7327:5;7316:16;;7310:27;;;;7345:145;7426:6;7421:3;7416;7403:30;7482:1;7473:6;7468:3;7464:16;7457:27;7396:94;;;;7499:268;7564:1;7571:101;7585:6;7582:1;7579:13;7571:101;;;7661:1;7656:3;7652:11;7646:18;7642:1;7637:3;7633:11;7626:39;7607:2;7604:1;7600:10;7595:15;;7571:101;;;7687:6;7684:1;7681:13;7678:2;;;7752:1;7743:6;7738:3;7734:16;7727:27;7678:2;7548:219;;;;;7775:97;;7863:2;7859:7;7854:2;7847:5;7843:14;7839:28;7829:38;;7823:49;;;;7880:117;7949:24;7967:5;7949:24;;;7942:5;7939:35;7929:2;;7988:1;7985;7978:12;7929:2;7923:74;",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.4.21 <0.7.0;\npragma experimental ABIEncoderV2;\n\ncontract IpfsUpload {\n\n    struct ImageStruct {\n        uint _id;\n        string _path;\n    }\n\n    ImageStruct[] public _ipfsImages;\n    address public _manager;\n    uint _idInc;\n\n    constructor()public{\n        _manager = msg.sender;\n    }\n\n    function addFile(string memory _ipfsHashWithBaseUrl) public  {\n        _idInc++;\n        _ipfsImages.push(\n            ImageStruct({\n                _id:_idInc,\n                _path:_ipfsHashWithBaseUrl\n            })\n        );\n    }\n\n    function deleteFile(uint _index) public{\n        _ipfsImages[_index] = _ipfsImages[_ipfsImages.length-1];\n        _ipfsImages.pop();\n    }\n\n    function getFiles()public  returns(ImageStruct[] memory) {\n        return _ipfsImages;\n    }\n\n}",
+  "sourcePath": "/Users/fc19193/useCase/ipfs-image-upload/contracts/IpfsUpload.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/IpfsUpload.sol",
+    "exportedSymbols": {
+      "IpfsUpload": [
+        73
+      ]
+    },
+    "id": 74,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".21",
+          "<",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:32:0"
+      },
+      {
+        "id": 2,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "65:33:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 73,
+        "linearizedBaseContracts": [
+          73
+        ],
+        "name": "IpfsUpload",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "IpfsUpload.ImageStruct",
+            "id": 7,
+            "members": [
+              {
+                "constant": false,
+                "id": 4,
+                "name": "_id",
+                "nodeType": "VariableDeclaration",
+                "scope": 7,
+                "src": "156:8:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 3,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "156:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 6,
+                "name": "_path",
+                "nodeType": "VariableDeclaration",
+                "scope": 7,
+                "src": "174:12:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 5,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "174:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "ImageStruct",
+            "nodeType": "StructDefinition",
+            "scope": 73,
+            "src": "127:66:0",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 10,
+            "name": "_ipfsImages",
+            "nodeType": "VariableDeclaration",
+            "scope": 73,
+            "src": "199:32:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_struct$_ImageStruct_$7_storage_$dyn_storage",
+              "typeString": "struct IpfsUpload.ImageStruct[]"
+            },
+            "typeName": {
+              "baseType": {
+                "contractScope": null,
+                "id": 8,
+                "name": "ImageStruct",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 7,
+                "src": "199:11:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_ImageStruct_$7_storage_ptr",
+                  "typeString": "struct IpfsUpload.ImageStruct"
+                }
+              },
+              "id": 9,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "199:13:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_struct$_ImageStruct_$7_storage_$dyn_storage_ptr",
+                "typeString": "struct IpfsUpload.ImageStruct[]"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 12,
+            "name": "_manager",
+            "nodeType": "VariableDeclaration",
+            "scope": 73,
+            "src": "237:23:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 11,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "237:7:0",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 14,
+            "name": "_idInc",
+            "nodeType": "VariableDeclaration",
+            "scope": 73,
+            "src": "266:11:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 13,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "266:4:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 22,
+              "nodeType": "Block",
+              "src": "303:38:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 20,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 17,
+                      "name": "_manager",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 12,
+                      "src": "313:8:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 18,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 88,
+                        "src": "324:3:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 19,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "324:10:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "313:21:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 21,
+                  "nodeType": "ExpressionStatement",
+                  "src": "313:21:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 23,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "295:2:0"
+            },
+            "returnParameters": {
+              "id": 16,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "303:0:0"
+            },
+            "scope": 73,
+            "src": "284:57:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 40,
+              "nodeType": "Block",
+              "src": "408:174:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 29,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "418:8:0",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "id": 28,
+                      "name": "_idInc",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14,
+                      "src": "418:6:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 30,
+                  "nodeType": "ExpressionStatement",
+                  "src": "418:8:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 35,
+                            "name": "_idInc",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 14,
+                            "src": "500:6:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "id": 36,
+                            "name": "_ipfsHashWithBaseUrl",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 25,
+                            "src": "530:20:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_string_memory_ptr",
+                              "typeString": "string memory"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            },
+                            {
+                              "typeIdentifier": "t_string_memory_ptr",
+                              "typeString": "string memory"
+                            }
+                          ],
+                          "id": 34,
+                          "name": "ImageStruct",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 7,
+                          "src": "466:11:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_struct$_ImageStruct_$7_storage_ptr_$",
+                            "typeString": "type(struct IpfsUpload.ImageStruct storage pointer)"
+                          }
+                        },
+                        "id": 37,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "structConstructorCall",
+                        "lValueRequested": false,
+                        "names": [
+                          "_id",
+                          "_path"
+                        ],
+                        "nodeType": "FunctionCall",
+                        "src": "466:99:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_ImageStruct_$7_memory",
+                          "typeString": "struct IpfsUpload.ImageStruct memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_struct$_ImageStruct_$7_memory",
+                          "typeString": "struct IpfsUpload.ImageStruct memory"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 31,
+                        "name": "_ipfsImages",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10,
+                        "src": "436:11:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_ImageStruct_$7_storage_$dyn_storage",
+                          "typeString": "struct IpfsUpload.ImageStruct storage ref[] storage ref"
+                        }
+                      },
+                      "id": 33,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "436:16:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_struct$_ImageStruct_$7_storage_$returns$_t_uint256_$",
+                        "typeString": "function (struct IpfsUpload.ImageStruct storage ref) returns (uint256)"
+                      }
+                    },
+                    "id": 38,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "436:139:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 39,
+                  "nodeType": "ExpressionStatement",
+                  "src": "436:139:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 41,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addFile",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 26,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 25,
+                  "name": "_ipfsHashWithBaseUrl",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41,
+                  "src": "364:34:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 24,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "364:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "363:36:0"
+            },
+            "returnParameters": {
+              "id": 27,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "408:0:0"
+            },
+            "scope": 73,
+            "src": "347:235:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 62,
+              "nodeType": "Block",
+              "src": "627:99:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 55,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 46,
+                        "name": "_ipfsImages",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10,
+                        "src": "637:11:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_ImageStruct_$7_storage_$dyn_storage",
+                          "typeString": "struct IpfsUpload.ImageStruct storage ref[] storage ref"
+                        }
+                      },
+                      "id": 48,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 47,
+                        "name": "_index",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 43,
+                        "src": "649:6:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "637:19:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_ImageStruct_$7_storage",
+                        "typeString": "struct IpfsUpload.ImageStruct storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 49,
+                        "name": "_ipfsImages",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10,
+                        "src": "659:11:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_ImageStruct_$7_storage_$dyn_storage",
+                          "typeString": "struct IpfsUpload.ImageStruct storage ref[] storage ref"
+                        }
+                      },
+                      "id": 54,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "id": 53,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 50,
+                            "name": "_ipfsImages",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 10,
+                            "src": "671:11:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_array$_t_struct$_ImageStruct_$7_storage_$dyn_storage",
+                              "typeString": "struct IpfsUpload.ImageStruct storage ref[] storage ref"
+                            }
+                          },
+                          "id": 51,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "length",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "671:18:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "-",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "hexValue": "31",
+                          "id": 52,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "690:1:0",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_1_by_1",
+                            "typeString": "int_const 1"
+                          },
+                          "value": "1"
+                        },
+                        "src": "671:20:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "IndexAccess",
+                      "src": "659:33:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_ImageStruct_$7_storage",
+                        "typeString": "struct IpfsUpload.ImageStruct storage ref"
+                      }
+                    },
+                    "src": "637:55:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_ImageStruct_$7_storage",
+                      "typeString": "struct IpfsUpload.ImageStruct storage ref"
+                    }
+                  },
+                  "id": 56,
+                  "nodeType": "ExpressionStatement",
+                  "src": "637:55:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 57,
+                        "name": "_ipfsImages",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10,
+                        "src": "702:11:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_ImageStruct_$7_storage_$dyn_storage",
+                          "typeString": "struct IpfsUpload.ImageStruct storage ref[] storage ref"
+                        }
+                      },
+                      "id": 59,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "pop",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "702:15:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypop_nonpayable$__$returns$__$",
+                        "typeString": "function ()"
+                      }
+                    },
+                    "id": 60,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "702:17:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 61,
+                  "nodeType": "ExpressionStatement",
+                  "src": "702:17:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 63,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "deleteFile",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 44,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 43,
+                  "name": "_index",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 63,
+                  "src": "608:11:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 42,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "608:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "607:13:0"
+            },
+            "returnParameters": {
+              "id": 45,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "627:0:0"
+            },
+            "scope": 73,
+            "src": "588:138:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 71,
+              "nodeType": "Block",
+              "src": "789:35:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 69,
+                    "name": "_ipfsImages",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 10,
+                    "src": "806:11:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_ImageStruct_$7_storage_$dyn_storage",
+                      "typeString": "struct IpfsUpload.ImageStruct storage ref[] storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 68,
+                  "id": 70,
+                  "nodeType": "Return",
+                  "src": "799:18:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 72,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getFiles",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 64,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "749:2:0"
+            },
+            "returnParameters": {
+              "id": 68,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 67,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 72,
+                  "src": "767:20:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_ImageStruct_$7_memory_$dyn_memory_ptr",
+                    "typeString": "struct IpfsUpload.ImageStruct[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "contractScope": null,
+                      "id": 65,
+                      "name": "ImageStruct",
+                      "nodeType": "UserDefinedTypeName",
+                      "referencedDeclaration": 7,
+                      "src": "767:11:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_ImageStruct_$7_storage_ptr",
+                        "typeString": "struct IpfsUpload.ImageStruct"
+                      }
+                    },
+                    "id": 66,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "767:13:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_ImageStruct_$7_storage_$dyn_storage_ptr",
+                      "typeString": "struct IpfsUpload.ImageStruct[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "766:22:0"
+            },
+            "scope": 73,
+            "src": "732:92:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 74,
+        "src": "100:727:0"
+      }
+    ],
+    "src": "32:795:0"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/IpfsUpload.sol",
+      "exportedSymbols": {
+        "IpfsUpload": [
+          73
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.4",
+            ".21",
+            "<",
+            "0.7",
+            ".0"
+          ]
+        },
+        "id": 1,
+        "name": "PragmaDirective",
+        "src": "32:32:0"
+      },
+      {
+        "attributes": {
+          "literals": [
+            "experimental",
+            "ABIEncoderV2"
+          ]
+        },
+        "id": 2,
+        "name": "PragmaDirective",
+        "src": "65:33:0"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            73
+          ],
+          "name": "IpfsUpload",
+          "scope": 74
+        },
+        "children": [
+          {
+            "attributes": {
+              "canonicalName": "IpfsUpload.ImageStruct",
+              "name": "ImageStruct",
+              "scope": 73,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "_id",
+                  "scope": 7,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 3,
+                    "name": "ElementaryTypeName",
+                    "src": "156:4:0"
+                  }
+                ],
+                "id": 4,
+                "name": "VariableDeclaration",
+                "src": "156:8:0"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "_path",
+                  "scope": 7,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 5,
+                    "name": "ElementaryTypeName",
+                    "src": "174:6:0"
+                  }
+                ],
+                "id": 6,
+                "name": "VariableDeclaration",
+                "src": "174:12:0"
+              }
+            ],
+            "id": 7,
+            "name": "StructDefinition",
+            "src": "127:66:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "_ipfsImages",
+              "scope": 73,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "struct IpfsUpload.ImageStruct[]",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "length": null,
+                  "type": "struct IpfsUpload.ImageStruct[]"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "ImageStruct",
+                      "referencedDeclaration": 7,
+                      "type": "struct IpfsUpload.ImageStruct"
+                    },
+                    "id": 8,
+                    "name": "UserDefinedTypeName",
+                    "src": "199:11:0"
+                  }
+                ],
+                "id": 9,
+                "name": "ArrayTypeName",
+                "src": "199:13:0"
+              }
+            ],
+            "id": 10,
+            "name": "VariableDeclaration",
+            "src": "199:32:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "_manager",
+              "scope": 73,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "address",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "address",
+                  "stateMutability": "nonpayable",
+                  "type": "address"
+                },
+                "id": 11,
+                "name": "ElementaryTypeName",
+                "src": "237:7:0"
+              }
+            ],
+            "id": 12,
+            "name": "VariableDeclaration",
+            "src": "237:23:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "_idInc",
+              "scope": 73,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "uint256",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "uint",
+                  "type": "uint256"
+                },
+                "id": 13,
+                "name": "ElementaryTypeName",
+                "src": "266:4:0"
+              }
+            ],
+            "id": 14,
+            "name": "VariableDeclaration",
+            "src": "266:11:0"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": true,
+              "kind": "constructor",
+              "modifiers": [
+                null
+              ],
+              "name": "",
+              "scope": 73,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 15,
+                "name": "ParameterList",
+                "src": "295:2:0"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 16,
+                "name": "ParameterList",
+                "src": "303:0:0"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "address"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 12,
+                              "type": "address",
+                              "value": "_manager"
+                            },
+                            "id": 17,
+                            "name": "Identifier",
+                            "src": "313:8:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "sender",
+                              "referencedDeclaration": null,
+                              "type": "address payable"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 88,
+                                  "type": "msg",
+                                  "value": "msg"
+                                },
+                                "id": 18,
+                                "name": "Identifier",
+                                "src": "324:3:0"
+                              }
+                            ],
+                            "id": 19,
+                            "name": "MemberAccess",
+                            "src": "324:10:0"
+                          }
+                        ],
+                        "id": 20,
+                        "name": "Assignment",
+                        "src": "313:21:0"
+                      }
+                    ],
+                    "id": 21,
+                    "name": "ExpressionStatement",
+                    "src": "313:21:0"
+                  }
+                ],
+                "id": 22,
+                "name": "Block",
+                "src": "303:38:0"
+              }
+            ],
+            "id": 23,
+            "name": "FunctionDefinition",
+            "src": "284:57:0"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "addFile",
+              "scope": 73,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_ipfsHashWithBaseUrl",
+                      "scope": 41,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 24,
+                        "name": "ElementaryTypeName",
+                        "src": "364:6:0"
+                      }
+                    ],
+                    "id": 25,
+                    "name": "VariableDeclaration",
+                    "src": "364:34:0"
+                  }
+                ],
+                "id": 26,
+                "name": "ParameterList",
+                "src": "363:36:0"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 27,
+                "name": "ParameterList",
+                "src": "408:0:0"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "++",
+                          "prefix": false,
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 14,
+                              "type": "uint256",
+                              "value": "_idInc"
+                            },
+                            "id": 28,
+                            "name": "Identifier",
+                            "src": "418:6:0"
+                          }
+                        ],
+                        "id": 29,
+                        "name": "UnaryOperation",
+                        "src": "418:8:0"
+                      }
+                    ],
+                    "id": 30,
+                    "name": "ExpressionStatement",
+                    "src": "418:8:0"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "uint256",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_struct$_ImageStruct_$7_memory",
+                                  "typeString": "struct IpfsUpload.ImageStruct memory"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "push",
+                              "referencedDeclaration": null,
+                              "type": "function (struct IpfsUpload.ImageStruct storage ref) returns (uint256)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 10,
+                                  "type": "struct IpfsUpload.ImageStruct storage ref[] storage ref",
+                                  "value": "_ipfsImages"
+                                },
+                                "id": 31,
+                                "name": "Identifier",
+                                "src": "436:11:0"
+                              }
+                            ],
+                            "id": 33,
+                            "name": "MemberAccess",
+                            "src": "436:16:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": true,
+                              "lValueRequested": false,
+                              "names": [
+                                "_id",
+                                "_path"
+                              ],
+                              "type": "struct IpfsUpload.ImageStruct memory",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_string_memory_ptr",
+                                      "typeString": "string memory"
+                                    }
+                                  ],
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 7,
+                                  "type": "type(struct IpfsUpload.ImageStruct storage pointer)",
+                                  "value": "ImageStruct"
+                                },
+                                "id": 34,
+                                "name": "Identifier",
+                                "src": "466:11:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 14,
+                                  "type": "uint256",
+                                  "value": "_idInc"
+                                },
+                                "id": 35,
+                                "name": "Identifier",
+                                "src": "500:6:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 25,
+                                  "type": "string memory",
+                                  "value": "_ipfsHashWithBaseUrl"
+                                },
+                                "id": 36,
+                                "name": "Identifier",
+                                "src": "530:20:0"
+                              }
+                            ],
+                            "id": 37,
+                            "name": "FunctionCall",
+                            "src": "466:99:0"
+                          }
+                        ],
+                        "id": 38,
+                        "name": "FunctionCall",
+                        "src": "436:139:0"
+                      }
+                    ],
+                    "id": 39,
+                    "name": "ExpressionStatement",
+                    "src": "436:139:0"
+                  }
+                ],
+                "id": 40,
+                "name": "Block",
+                "src": "408:174:0"
+              }
+            ],
+            "id": 41,
+            "name": "FunctionDefinition",
+            "src": "347:235:0"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "deleteFile",
+              "scope": 73,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_index",
+                      "scope": 63,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 42,
+                        "name": "ElementaryTypeName",
+                        "src": "608:4:0"
+                      }
+                    ],
+                    "id": 43,
+                    "name": "VariableDeclaration",
+                    "src": "608:11:0"
+                  }
+                ],
+                "id": 44,
+                "name": "ParameterList",
+                "src": "607:13:0"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 45,
+                "name": "ParameterList",
+                "src": "627:0:0"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "struct IpfsUpload.ImageStruct storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "type": "struct IpfsUpload.ImageStruct storage ref"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 10,
+                                  "type": "struct IpfsUpload.ImageStruct storage ref[] storage ref",
+                                  "value": "_ipfsImages"
+                                },
+                                "id": 46,
+                                "name": "Identifier",
+                                "src": "637:11:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 43,
+                                  "type": "uint256",
+                                  "value": "_index"
+                                },
+                                "id": 47,
+                                "name": "Identifier",
+                                "src": "649:6:0"
+                              }
+                            ],
+                            "id": 48,
+                            "name": "IndexAccess",
+                            "src": "637:19:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "type": "struct IpfsUpload.ImageStruct storage ref"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 10,
+                                  "type": "struct IpfsUpload.ImageStruct storage ref[] storage ref",
+                                  "value": "_ipfsImages"
+                                },
+                                "id": 49,
+                                "name": "Identifier",
+                                "src": "659:11:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "commonType": {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                  },
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "operator": "-",
+                                  "type": "uint256"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "isConstant": false,
+                                      "isLValue": true,
+                                      "isPure": false,
+                                      "lValueRequested": false,
+                                      "member_name": "length",
+                                      "referencedDeclaration": null,
+                                      "type": "uint256"
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "overloadedDeclarations": [
+                                            null
+                                          ],
+                                          "referencedDeclaration": 10,
+                                          "type": "struct IpfsUpload.ImageStruct storage ref[] storage ref",
+                                          "value": "_ipfsImages"
+                                        },
+                                        "id": 50,
+                                        "name": "Identifier",
+                                        "src": "671:11:0"
+                                      }
+                                    ],
+                                    "id": 51,
+                                    "name": "MemberAccess",
+                                    "src": "671:18:0"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "hexvalue": "31",
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": true,
+                                      "lValueRequested": false,
+                                      "subdenomination": null,
+                                      "token": "number",
+                                      "type": "int_const 1",
+                                      "value": "1"
+                                    },
+                                    "id": 52,
+                                    "name": "Literal",
+                                    "src": "690:1:0"
+                                  }
+                                ],
+                                "id": 53,
+                                "name": "BinaryOperation",
+                                "src": "671:20:0"
+                              }
+                            ],
+                            "id": 54,
+                            "name": "IndexAccess",
+                            "src": "659:33:0"
+                          }
+                        ],
+                        "id": 55,
+                        "name": "Assignment",
+                        "src": "637:55:0"
+                      }
+                    ],
+                    "id": 56,
+                    "name": "ExpressionStatement",
+                    "src": "637:55:0"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            null
+                          ],
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                null
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "pop",
+                              "referencedDeclaration": null,
+                              "type": "function ()"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 10,
+                                  "type": "struct IpfsUpload.ImageStruct storage ref[] storage ref",
+                                  "value": "_ipfsImages"
+                                },
+                                "id": 57,
+                                "name": "Identifier",
+                                "src": "702:11:0"
+                              }
+                            ],
+                            "id": 59,
+                            "name": "MemberAccess",
+                            "src": "702:15:0"
+                          }
+                        ],
+                        "id": 60,
+                        "name": "FunctionCall",
+                        "src": "702:17:0"
+                      }
+                    ],
+                    "id": 61,
+                    "name": "ExpressionStatement",
+                    "src": "702:17:0"
+                  }
+                ],
+                "id": 62,
+                "name": "Block",
+                "src": "627:99:0"
+              }
+            ],
+            "id": 63,
+            "name": "FunctionDefinition",
+            "src": "588:138:0"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getFiles",
+              "scope": 73,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 64,
+                "name": "ParameterList",
+                "src": "749:2:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 72,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "struct IpfsUpload.ImageStruct[]",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "length": null,
+                          "type": "struct IpfsUpload.ImageStruct[]"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "contractScope": null,
+                              "name": "ImageStruct",
+                              "referencedDeclaration": 7,
+                              "type": "struct IpfsUpload.ImageStruct"
+                            },
+                            "id": 65,
+                            "name": "UserDefinedTypeName",
+                            "src": "767:11:0"
+                          }
+                        ],
+                        "id": 66,
+                        "name": "ArrayTypeName",
+                        "src": "767:13:0"
+                      }
+                    ],
+                    "id": 67,
+                    "name": "VariableDeclaration",
+                    "src": "767:20:0"
+                  }
+                ],
+                "id": 68,
+                "name": "ParameterList",
+                "src": "766:22:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 68
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "overloadedDeclarations": [
+                            null
+                          ],
+                          "referencedDeclaration": 10,
+                          "type": "struct IpfsUpload.ImageStruct storage ref[] storage ref",
+                          "value": "_ipfsImages"
+                        },
+                        "id": 69,
+                        "name": "Identifier",
+                        "src": "806:11:0"
+                      }
+                    ],
+                    "id": 70,
+                    "name": "Return",
+                    "src": "799:18:0"
+                  }
+                ],
+                "id": 71,
+                "name": "Block",
+                "src": "789:35:0"
+              }
+            ],
+            "id": 72,
+            "name": "FunctionDefinition",
+            "src": "732:92:0"
+          }
+        ],
+        "id": 73,
+        "name": "ContractDefinition",
+        "src": "100:727:0"
+      }
+    ],
+    "id": 74,
+    "name": "SourceUnit",
+    "src": "32:795:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0xd592c3FEF50a11A23839f7C3Ac4815F3EB424711",
+      "transactionHash": "0x133e6bd16820f4c428d65c9fdfef6df0f418667991fbab9208b7329d86ba284c"
+    }
+  },
+  "schemaVersion": "3.4.7",
+  "updatedAt": "2022-06-14T11:27:35.962Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
